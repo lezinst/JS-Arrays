@@ -421,16 +421,16 @@ var user1 = {
 
 //Your Code Here
 var users = [
-  {
+  
 
-    var user1 = {
+    {
     name: 'Tyler McGinnis',
     email: 'tylermcginnis33@gmail.com',
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
     }
 
-    var user2 = {
+    {
     name: 'Millie McGonner',
     email: 'Momo@gmail.com',
     password: 'password',
@@ -438,13 +438,13 @@ var users = [
     }
 
 
-    var user3 = {
+    {
     name: 'Soon Dead',
     email: 'gonnabiteit@gmail.com',
     password: 'password',
     username: 'lastlegs'
     }
-  }
+  ]
 
 
 
@@ -458,6 +458,15 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
+
+  function minusTyler() {
+      for(var = 0; i < users.length; i++){
+          if( users[i].email === "tylermcginnis33@gmail.com"){
+            users.splice(i,1);
+          }
+      }
+    return users;  
+  }
 
 //The activity we just did is very much how data works in 'the real world'.
 
