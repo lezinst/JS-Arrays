@@ -6,10 +6,9 @@ var arr = [10,20,30];
 
   //Code Here
 
-function first(arr){
+function first(arr) {
+  var first = first || [];
 	return arr[0];
-
-
 }
 
 //Next problem
@@ -22,7 +21,7 @@ var arr = [40,50,60];
 
   //Code Here
 function last(arr) {
-	return arr.length - 1;
+	return arr[arr.length - 1];
 }
 
 //Next Problem
@@ -51,11 +50,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
   //Code Here
 
-  function reversedLooper(num) {
+  function reversedLooper(arr) {
 
-  		num.reverse();
-          for (var i = 0; i < num.length; i++){
-            alert(num[i]);
+  		
+          for (var i = arr.length - 1 ; i >= 0; i--){
+            alert(arr[i]);
           }
 
   		}
@@ -86,14 +85,14 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
       }
       return arr;
   }
+
   evenFinder(nums);
 
   
 
-function evenFinder(arr){
 
 
-}
+
 //Next problem
 
 
@@ -110,7 +109,6 @@ and the second item in the Array being the odds array(all the odd values from nu
   //Code Here
 
   function divider(nums,evens,odds) {
-    return function() {
       for (var i = 0; i < nums.length; i++){
           if(nums[i] % 2 !== 0){
            evens.push(nums[i]); 
@@ -119,11 +117,11 @@ and the second item in the Array being the odds array(all the odd values from nu
           odds.push(nums[i]);
           }
       }
+      return newArray =  [evens, odds];
 
     }
-   return [evens, odds];
-
-  }
+   
+  
 
 //never mind this!
   /*function divider(nums) {
@@ -187,7 +185,6 @@ function reverse(str){
   str = str.join('');
 }
 
-return str;
 //Next Problem
 
 
@@ -260,6 +257,9 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 function addTen(numbers) {
   var newArray = [];
   for(var i = 0; i < numbers.length; i++){
+    if(typeof(numbers[i])==='string'){
+      parseInt(numbers[i])
+    }
   newArray.push(numbers[i] + 10);
    
   }
@@ -268,7 +268,14 @@ function addTen(numbers) {
 
 }
 
-console.log(addTen(numbers));
+function addTen(ints) {
+  ints.forEach(function(int,i) {
+    ints[i] = parseInt(int) + 10;
+  });
+return ints;
+}
+
+//console.log(addTen(numbers));
 
 //need to figure out how to turn them all into numbers
 
@@ -359,7 +366,7 @@ sure that it's equal to 4. */
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
-for(var i = 0; i < devMountainEmployees.length: i++){
+for(var i = 0; i < devMountainEmployees.length; i++){
     if(devMountainEmployees[i] === "cahlan"){
       devMountainEmployees.splice(i,1);
     }
@@ -428,14 +435,14 @@ var users = [
     email: 'tylermcginnis33@gmail.com',
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
-    }
+    },
 
     {
     name: 'Millie McGonner',
     email: 'Momo@gmail.com',
     password: 'password',
     username: 'mills'
-    }
+    },
 
 
     {
@@ -460,7 +467,7 @@ Once you find the particular index he's located in, delete him from the array.*/
   //Code Here
 
   function minusTyler() {
-      for(var = 0; i < users.length; i++){
+      for(var i = 0; i < users.length; i++){
           if( users[i].email === "tylermcginnis33@gmail.com"){
             users.splice(i,1);
           }
